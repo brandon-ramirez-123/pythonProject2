@@ -6,7 +6,7 @@ from src.seleccionestudiante.modelo.Equipo import Equipo
 from src.seleccionestudiante.modelo.declarative_base import Session, engine, Base
 
 
-def anadeRegistros():
+def anade_registros():
     # Crea la base de datos
     Base.metadata.create_all(engine)
 
@@ -70,7 +70,7 @@ def anadeRegistros():
     session.close()
 
 
-def eliminarRegistros():
+def eliminar_registros():
     session = Session()
 
     estudiantes = session.query(Estudiante).all()
@@ -109,10 +109,10 @@ if __name__ == '__main__':
             print("Fin...")
             break
         elif opcion == 1:
-            anadeRegistros()
+            anade_registros()
             print("Registros añadidos")
         elif opcion == 2:
-            eliminarRegistros()
+            eliminar_registros()
             print("Registros eliminados")
         else:
             print("Opción incorrecta")
